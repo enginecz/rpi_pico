@@ -10,8 +10,9 @@ with different Pico hats.
 - Raspberry Pi Pico 1, non-W
 - MicroPython firmware
 - USB connection to the development computer
-- Future modules may include hats such as e-paper displays, sensors, buttons,
-  relays, or other simple home-use peripherals
+- First display module: Waveshare Pico-ePaper-2.9, 296 x 128 pixels, B/W V2
+- Future modules may include sensors, buttons, relays, or other simple home-use
+  peripherals
 
 ## Current Development Environment
 
@@ -30,7 +31,10 @@ with different Pico hats.
 ## Current Status
 
 The Pico has been erased, flashed with fresh MicroPython firmware, and verified
-in Thonny. No MicroPython program has been added yet.
+in Thonny. The first beginner LED blink program works. The Waveshare
+Pico-ePaper-2.9 B/W display is connected and working with a clean clear test
+and a first hello display program. A first small home status screen has been
+added as the next application step.
 
 ## Planned Steps
 
@@ -49,17 +53,43 @@ in Thonny. No MicroPython program has been added yet.
 ├── docs/        General beginner documentation and project notes
 ├── firmware/    Firmware download and flashing notes
 ├── hardware/    Hardware wiring notes and module/hats documentation
-└── src/         Future MicroPython source files
-    ├── apps/    Future runnable examples or small applications
+└── src/         MicroPython source files
+    ├── apps/    Runnable examples or small applications
+    ├── diagnostics/ Troubleshooting scripts kept out of the normal workflow
     ├── lib/     Future shared helper code
     └── modules/ Future hardware-specific modules
 ```
 
 ## How To Run
 
-There is nothing to run yet. The first runnable program will be added in a later
-step after the Pico has fresh MicroPython firmware installed.
+Run the LED blink program:
+
+1. Connect the Pico normally by USB.
+2. Open Thonny.
+3. Open `src/apps/blink_onboard_led.py`.
+4. Make sure Thonny is connected to the Pico MicroPython interpreter.
+5. Press Run.
+
+The onboard LED should blink twice per second.
+
+Run the first e-paper test:
+
+1. Connect the Pico normally by USB.
+2. In Thonny, open `src/modules/waveshare_epaper_2in9.py`.
+3. Save it to the Pico as `waveshare_epaper_2in9.py`.
+4. Open `src/apps/epaper_hello.py`.
+5. Make sure Thonny is connected to the Pico MicroPython interpreter.
+6. Press Run.
+
+The e-paper display should refresh and show a short status message.
+
+Run the first home status screen:
+
+1. Make sure `src/modules/waveshare_epaper_2in9.py` is saved to the Pico as
+   `waveshare_epaper_2in9.py`.
+2. Open `src/apps/home_status.py`.
+3. Press Run.
 
 ## Next Recommended Step
 
-Create the first beginner program: blink the onboard LED.
+Replace one placeholder on `home_status.py` with real data from the next module.

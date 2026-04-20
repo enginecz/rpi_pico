@@ -24,6 +24,8 @@ Expected result:
 
 ## Step 3: First Program
 
+Status: complete.
+
 Create a minimal LED blink program.
 
 Expected result:
@@ -33,6 +35,8 @@ Expected result:
 - Onboard LED blinks.
 
 ## Step 4: E-Paper Display Hardware
+
+Status: complete.
 
 Document wiring and connect the e-paper display.
 
@@ -44,6 +48,8 @@ Expected result:
 
 ## Step 5: First E-Paper Program
 
+Status: complete.
+
 Create a simple display program.
 
 Expected result:
@@ -51,9 +57,23 @@ Expected result:
 - Display shows a short text or simple shape.
 - Display code is kept separate from the main app where practical.
 
+Completed result:
+
+- `src/apps/epaper_clear_test.py` refreshes white, black, then white.
+- `src/apps/epaper_hello.py` shows a simple text and shape screen.
+- `src/modules/waveshare_epaper_2in9.py` is based on the confirmed-working
+  official Waveshare Pico MicroPython driver.
+
 ## Step 6: More Functionality
 
+Status: started.
+
 Add future home-use modules one at a time.
+
+Current result:
+
+- `src/apps/home_status.py` shows a static home status screen with placeholders
+  for future time, temperature, and system data.
 
 Possible later examples:
 

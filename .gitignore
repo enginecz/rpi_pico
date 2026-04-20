@@ -1,3 +1,6 @@
 # Local firmware downloads
 firmware/*.uf2
 
+# Local Python syntax-check/cache files
+__pycache__/
+*.pyc
