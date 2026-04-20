@@ -74,10 +74,14 @@ Current result:
 
 - `src/apps/home_status.py` shows a static home status screen with placeholders
   for future time, temperature, and system data.
+- `src/apps/temperature_on_button.py` reads the Pico internal temperature sensor
+  only after pressing a button on GP15, then updates the e-paper display.
+- `src/apps/temperature_once_on_power.py` simulates the future power-latch flow:
+  power on, measure, update e-paper, sleep display, then manually unplug power.
 
 Possible later examples:
 
 - Room status display
 - Clock or calendar display
-- Sensor reading display
+- External low-power temperature sensor
 - Button-controlled mode switching

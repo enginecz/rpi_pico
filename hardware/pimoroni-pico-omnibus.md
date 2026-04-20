@@ -36,7 +36,12 @@ If the e-paper display uses a Pico pin, another module should not use that same
 pin unless the interface is designed to be shared. For this project, treat the
 e-paper pins as reserved until we intentionally design a shared bus.
 
+Current additional reserved pin:
+
+| Pico Pin | Used By |
+| --- | --- |
+| GP15 | Normally open button to GND |
+
 ## Source
 
 - Pimoroni product page: <https://shop.pimoroni.com/products/pico-omnibus>
-

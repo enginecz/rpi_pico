@@ -1,0 +1,11 @@
+{
+  "python.analysis.extraPaths": [
+    "./src/apps",
+    "./src/modules",
+    "./typings"
+  ],
+  "python.analysis.stubPath": "./typings",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingModuleSource": "none"
+  }
+}

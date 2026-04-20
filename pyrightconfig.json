@@ -1,0 +1,9 @@
+{
+  "extraPaths": [
+    "src/apps",
+    "src/modules",
+    "typings"
+  ],
+  "stubPath": "typings",
+  "reportMissingModuleSource": false
+}

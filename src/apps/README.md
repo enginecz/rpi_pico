@@ -12,6 +12,13 @@ Small runnable MicroPython programs live here.
   clear test for checking the display hardware.
 - [home_status.py](home_status.py): first useful e-paper screen with simple
   placeholders for future home data.
+- [temperature_on_button.py](temperature_on_button.py): waits for a button on
+  GP15, reads the Pico internal temperature sensor, and updates the e-paper
+  display.
+- [temperature_once_on_power.py](temperature_once_on_power.py): measures the
+  Pico internal temperature once after power-on, updates the e-paper display,
+  then waits in light sleep so USB can be unplugged. The screen shows only a
+  large temperature value.
 
 ## Run With Thonny
 
@@ -45,6 +52,41 @@ If `epaper_hello.py` still shows noise, run `epaper_clear_test.py`. It should
 refresh white, then black, then white again.
 
 After both display tests work, run `home_status.py` as the first useful screen.
+
+## Run Temperature On Button
+
+1. Connect a normally open button between GP15 and GND.
+2. Save `src/apps/temperature_on_button.py` to the Pico.
+3. Run it from Thonny.
+4. Press the button to update the e-paper display.
+
+The Pico internal temperature sensor measures chip temperature, not accurate
+room temperature. It is useful for learning the flow before adding an external
+sensor.
+
+## Run Temperature Once On Power
+
+Save these files to the Pico root:
+
+- `src/main.py` as `main.py`
+- `src/apps/temperature_once_on_power.py` as `temperature_once_on_power.py`
+
+`main.py` is only a small launcher. To autostart another app later, change the
+import inside `src/main.py`.
+
+After that:
+
+1. Unplug USB power.
+2. Plug USB power in.
+3. Wait for the display update.
+4. Unplug USB power again.
+
+This manually simulates the future power-latch workflow.
+
+When this autostart mode is active, connect the Pico and press Stop/Restart
+backend in Thonny while the program is still running or refreshing the e-paper
+display before uploading new code. If it has already reached long light sleep,
+unplug it, plug it in again, and stop it quickly during startup.
 
 Older troubleshooting probes live in `src/diagnostics/`. Use them only if the
 normal display tests stop working.
